@@ -35,6 +35,14 @@ public class MonsterTestApp {
 		
 		long totalCount = monsters.stream().count();
 		System.out.println("total = " + totalCount);
+		
+		// 희귀한 몬스터들 리스트
+		List<String> rareNames = monsters.stream()
+										 .filter(monster -> monster.getGrade().equals("희귀"))
+										 .map(monster -> monster.getName())
+										 .toList();
+		// rareNames 리스트 내용 출력
+		System.out.println(rareNames);
 	}
 
 }
